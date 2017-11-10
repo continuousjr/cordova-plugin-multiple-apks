@@ -1,0 +1,27 @@
+{
+  "name": "cordova-plugin-multiple-apks",
+  "version": "0.0.1",
+  "description": "Enable building separate APKs for each architecture.",
+  "cordova": {
+    "id": "cordova-plugin-multiple-apks",
+    "platforms": [
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/continuousjr/cordova-plugin-multiple-apks.git"
+  },
+  "keywords": [
+    "cordova-android",
+    "multiple-apks"
+  ],
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.0.0"
+  }
+  ],
+  "author": "DavidStrausz",
+  "license": ""
+}
