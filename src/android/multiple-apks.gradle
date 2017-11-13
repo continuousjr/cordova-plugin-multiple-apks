@@ -1,24 +1,38 @@
 
 android {
-    splits {
+    defaultConfig {
+        versionCode cdvVersionCode ?: new BigInteger("" + privateHelpers.extractIntFromManifest("versionCode"))
+    }
 
-        // Configures multiple APKs based on ABI.
-        abi {
-
-            // Enables building multiple APKs per ABI.
-            enable true
-
-            // By default all ABIs are included, so use reset() and include to specify that we only
-            // want APKs for x86, armeabi-v7a, and mips.
-
-            // Resets the list of ABIs that Gradle should create APKs for to none.
-            reset()
-
-            // Specifies a list of ABIs that Gradle should create APKs for.
-            include "armeabi-v7a", "arm64-v8a", "x86", "x86_64"
-
-            // Specifies that we do not want to also generate a universal APK that includes all ABIs.
-            universalApk false
+    productFlavors {
+        "armeabi-v7a" {
+            versionCode defaultConfig.versionCode*10 + 2
+            ndk {
+                abiFilters "armeabi-v7a", ""
+            }
+        }
+        "arm64-v8a" {
+            versionCode defaultConfig.versionCode*10 + 3
+            ndk {
+                abiFilters "arm64-v8a", ""
+            }
+        }
+        x86 {
+            versionCode defaultConfig.versionCode*10 + 4
+            ndk {
+                abiFilters "x86", ""
+            }
+        }
+        x86_64 {
+            versionCode defaultConfig.versionCode*10 + 5
+            ndk {
+                abiFilters "x86_64", ""
+            }
+        }
+        all {
+            ndk {
+                abiFilters "all", ""
+            }
         }
     }
 }
