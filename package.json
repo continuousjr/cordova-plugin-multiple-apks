@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-multiple-apks",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Enable building separate APKs for each architecture.",
   "cordova": {
     "id": "cordova-plugin-multiple-apks",
