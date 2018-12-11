@@ -3,7 +3,7 @@ android {
     defaultConfig {
         versionCode cdvVersionCode ?: new BigInteger("" + privateHelpers.extractIntFromManifest("versionCode"))
     }
-
+    flavorDimensions "version"
     productFlavors {
         "armeabi-v7a" {
             versionCode defaultConfig.versionCode*10 + 2
